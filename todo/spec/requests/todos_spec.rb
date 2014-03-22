@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe "Todos" do
+
+before do
+	@task = Task.create :task => 'A brand new task'
+end
+
   describe "GET /tasks" do
     it "display  everydays task" do
       Task.create :task => 'make coffee'
@@ -17,16 +22,11 @@ describe "Todos" do
     end
 
     it "edit a task" do
-    	@task = Task.create :task => 'A brand new task'
   		visit tasks_path
-
   		find("#task_#{@task.id}").click_link 'Edit'
   		current_path.should == edit_task_path(@task)
   		find_field('Task').value.should eq 'A brand new task'
-
-  		
   		fill_in 'Task', :with => 'Updated task'
-
   		click_button 'Update Task'
   		page.should have_content 'Updated task'
   		
