@@ -15,5 +15,16 @@ describe "Todos" do
     	current_path.should == tasks_path
     	page.should have_content 'do some exercise'
     end
+
+    it "edit a task" do
+    	@task = Post.create :title => 'A brand new task'
+  		visit tasks_path
+  		click_link 'Edit'
+  		find_field('Task').value.should eq 'A brand new task'
+  		fill_in 'Task', :with => 'Updated task'
+  		click_button 'Update Task'
+  		page.should have_content 'Updated task'
+  		
+  	end	
   end
 end
