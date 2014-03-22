@@ -9,8 +9,9 @@
 
 <ul>
 	<% for task in @tasks %>
-		<li>
-			<%= task.task %>
+		<li id = "task_<%= 	task.id %>">
+			<%= task.task %> |
+			<%= link_to 'Edit', edit_task_path(task) %>
 		</li>
 	<% end %>
 </ul>

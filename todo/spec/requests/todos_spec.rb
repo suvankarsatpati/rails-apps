@@ -17,11 +17,16 @@ describe "Todos" do
     end
 
     it "edit a task" do
-    	@task = Post.create :title => 'A brand new task'
+    	@task = Task.create :task => 'A brand new task'
   		visit tasks_path
-  		click_link 'Edit'
+
+  		find("#task_#{@task.id}").click_link 'Edit'
+  		current_path.should == edit_task_path(@task)
   		find_field('Task').value.should eq 'A brand new task'
+
+  		
   		fill_in 'Task', :with => 'Updated task'
+
   		click_button 'Update Task'
   		page.should have_content 'Updated task'
   		
