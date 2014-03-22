@@ -22,6 +22,12 @@ class TasksController < ApplicationController
   		redirect_to :back
   	end
   end
+  
+  def notify
+  	puts "you are here"
+    UserMailer.reminder_email("suvankar.17@gmail.com").deliver
+    redirect_to :back, :notice => "Trying to send email"
+  end
 
   private
 	  def task_params

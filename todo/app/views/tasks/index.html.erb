@@ -7,7 +7,11 @@
 	<% for task in @tasks %>
 		<li id = "task_<%= 	task.id %>">
 			<%= task.task %> |
-			<%= link_to 'Edit', edit_task_path(task) %>
+			<%= time_ago_in_words(task.created_at) %>   | 
+			<%= link_to 'Edit', edit_task_path(task) %> | 
+
 		</li>
 	<% end %>
 </ul>
+
+<%= button_to "Notify", {:controller => :tasks, :action => :notify}, {:method => :get } %>

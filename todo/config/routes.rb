@@ -3,7 +3,9 @@ Todo::Application.routes.draw do
   root 'tasks#index'
   
   
-  resources :tasks
+  resources :tasks do
+    get :notify, :on => :collection
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
