@@ -24,8 +24,7 @@ class TasksController < ApplicationController
   end
   
   def notify
-  	puts "you are here"
-    UserMailer.reminder_email("suvankar.17@gmail.com").deliver
+    UserMailer.reminder_email(current_user).deliver
     redirect_to :back, :notice => "Trying to send email"
   end
 

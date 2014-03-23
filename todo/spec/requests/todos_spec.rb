@@ -33,3 +33,19 @@ end
   	end	
   end
 end
+
+describe User do
+  before do
+  	@user = User.create :email => 'abc@gmail.com', :password => 'asdfasdf', :password_confirmation => 'asdfasdf'
+  end
+ 
+  it "sends an email" do 
+    visit new_user_session_path
+    fill_in 'Email', :with => @user.email
+    fill_in 'Password', :with => @user.password
+    click_button 'Sign in'
+    visit tasks_path
+    click_button 'Notify'
+    ActionMailer::Base.deliveries.last.to.should == [@user.email]
+  end
+end
