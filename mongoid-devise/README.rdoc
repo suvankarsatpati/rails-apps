@@ -1,5 +1,6 @@
 == README
 
+
 This application writen on: 
 
 * Ruby version  :2.0
@@ -16,4 +17,5 @@ This application writen on:
 
 * No test suite is included till now
 
+{Detail documentation}[http://suvankar.svbtle.com/devise-and-mongoid-in-rails-4]
 
