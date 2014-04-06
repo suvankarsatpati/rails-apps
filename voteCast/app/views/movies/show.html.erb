@@ -6,9 +6,16 @@
 </p>
 
 <p>
-  <strong>Storyline:</strong>
+  <strong>Story Line:</strong>
   <%= @movie.storyline %>
 </p>
 
+<p>
+  <strong>Likes:</strong>
+  <%= @movie.votes %>
+</p>
+
+<%= link_to 'Up vote', upvote_movie_path(@movie) %> |
+<%= link_to 'Down vote', downvote_movie_path(@movie) %>|
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

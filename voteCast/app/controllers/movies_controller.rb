@@ -62,6 +62,22 @@ class MoviesController < ApplicationController
     end
   end
 
+  def upvote
+    movie = set_movie
+    movie.inc(votes: 1)
+    movie.user_id = current_user.email  
+    movie.save
+    redirect_to :back, notice: 'Thank you casting your upvote'
+  end
+
+  def downvote
+    movie = set_movie
+    movie.inc(votes: -1)
+    movie.user_id = current_user.email
+    movie.save
+    redirect_to :back, notice: 'Thank you casting your down vote'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

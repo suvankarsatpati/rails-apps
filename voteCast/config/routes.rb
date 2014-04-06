@@ -1,8 +1,10 @@
 VoteCast::Application.routes.draw do
   
   devise_for :users
-  resources :movies
-
+  resources :movies do
+      get 'upvote', on: :member
+      get 'downvote', on: :member
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
