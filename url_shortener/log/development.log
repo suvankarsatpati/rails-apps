@@ -1,0 +1,29 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-20 08:29:47 +0530
+Processing by UrlsController#index as HTML
+  Rendered urls/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 741ms (Views: 717.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/urls.css?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+
+
+Started GET "/assets/urls.js?body=1" for 127.0.0.1 at 2015-02-20 08:29:48 +0530
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0933ms
+  MOPED: 127.0.0.1:27017 QUERY        database=url_shortener_development collection=urls selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6772ms
