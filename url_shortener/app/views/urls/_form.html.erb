@@ -1,0 +1,9 @@
+<%= form_for(@url) do |f| %>
+   <div class="field">
+    <%= f.label "Paste your long url here:" %><br />
+    <%= f.text_field :long_url %>
+  </div>
+  <div class="actions">
+	  <input id="application_submit" name="commit" type="submit" VALUE="shorten URL"/>
+  </div>
+<% end %>

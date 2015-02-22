@@ -1,2 +1,29 @@
-<h1>Urls#index</h1>
-<p>Find me in app/views/urls/index.html.erb</p>
+<center><h1>URL Shortner</h1></center>
+<div id ="url_shortener">
+  <%= render 'form' %>
+</div>
+
+<center><h1>List of all URL</h1></center>
+<div id="url_shortener">
+  <table>
+    <tr>
+    	<th>Long url</th>
+      <th>Short url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @urls.each do |url_detail| %>
+      <tr>
+      	<td><%=link_to url_detail.long_url, url_detail.long_url, :target => "_blank" %></td>
+      	<td><%= link_to url_detail.short_url, url_detail.long_url, :target => "_blank" %></td>
+        <td><%= link_to 'Delete', url_detail, data: { confirm: 'Are you sure?' }, :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br/>
+</div>
+
+
+

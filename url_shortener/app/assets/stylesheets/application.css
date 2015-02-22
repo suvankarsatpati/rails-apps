@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+#flash_notice {
+	background: green;
+	border: 1px solid darken(green, 20%);
+	text-align: center;
+	padding: 5px;
+	color: white;
+
+}
+
+#url_shortener {
+	width: 800px;
+	margin: 0px auto;
+	text-align: left;
+	padding:15px;
+	border:1px solid #333;
+	background-color:#eee;
+
+}
