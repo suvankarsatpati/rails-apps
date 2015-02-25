@@ -4,10 +4,10 @@
 </div>
 
 <center><h1>List of all URL</h1></center>
-<div id="url_shortener">
-  <table>
+<div >
+  <table id="url_shortener">
     <tr>
-    	<th>Long url</th>
+      <th>Long url</th>
       <th>Short url</th>
       <th></th>
       <th></th>
@@ -15,15 +15,17 @@
     </tr>
 
     <% @urls.each do |url_detail| %>
-      <tr>
-      	<td><%=link_to url_detail.long_url, url_detail.long_url, :target => "_blank" %></td>
-      	<td><%= link_to url_detail.short_url, url_detail.long_url, :target => "_blank" %></td>
+      <tr>     
+       <td id="<%= url_detail.id %>" > <%=link_to url_detail.long_url, url_detail.long_url, :target => "_blank" %></td>
+        <td id="<%= url_detail.id %>" ><%= link_to url_detail.short_url, url_detail.long_url, :target => "_blank" %></td>
         <td><%= link_to 'Delete', url_detail, data: { confirm: 'Are you sure?' }, :method => :delete %></td>
       </tr>
     <% end %>
   </table>
   <br/>
 </div>
+
+
 
 
 

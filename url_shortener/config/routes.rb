@@ -2,7 +2,8 @@ UrlShortener::Application.routes.draw do
 
   get "urls/index"
   resources :urls
-  root to: 'urls#index'
+  root 'urls#index'
+  post 'urls/click_count' => 'urls#click_count' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

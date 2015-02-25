@@ -1,8 +1,15 @@
 class UrlsController < ApplicationController
   before_action :set_url, only: [:destroy]
+  skip_before_filter :verify_authenticity_token, :only => [:click_count]
+
+  def click_count
+    @url = Url.find params[:url_id]
+    @url.inc(usage_frequency: 1)
+    redirect_to root_path
+  end
 
   def index
-  	@urls = Url.all
+  	@urls = Url.desc(:usage_frequency).limit(100)
   	@url = Url.new
   end
 
